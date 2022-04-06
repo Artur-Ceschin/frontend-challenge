@@ -1,4 +1,9 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
+import { shade } from "polished"
+
+interface CharactersOrMovies {
+  isCharacterOrMovie: String
+}
 
 export const Container = styled.header`
   background: #0f0f0f;
@@ -26,15 +31,48 @@ export const StarWars = styled.div`
   }
 `
 
-export const CharactersOrMovies = styled.section`
+export const CharactersOrMovies = styled.section<CharactersOrMovies>`
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  a {
-    margin: 24px;
-    background-color: var(--gray-200);
-    padding: 6px 48px;
+  ${(props) =>
+    props.isCharacterOrMovie === "characters"
+      ? css`
+          button.characters {
+            background: var(--gray-200);
+          }
+        `
+      : css`
+          button.characters {
+            background: none;
+          }
+        `}
+  ${(props) =>
+    props.isCharacterOrMovie === "movies"
+      ? css`
+          button.movies {
+            background: var(--gray-200);
+          }
+        `
+      : css`
+          button.movies {
+            background: none;
+          }
+        `}
+  button {
+    background: none;
+    color: inherit;
+    border: none;
     border-radius: 18px;
+    padding: 10px;
+    outline: inherit;
+    padding: 6px 48px;
+    margin: 24px;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background: ${shade(0.2, "#303030")};
+    }
   }
 `
 export const Register = styled.div`

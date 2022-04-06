@@ -2,11 +2,11 @@ import { FaSearch } from "react-icons/fa"
 
 import { Container } from "./styles"
 
-export function Search() {
+export function Search({ title }) {
   return (
     <Container>
       <FaSearch />
-      <input type="text" placeholder="FILTRE POR NOME DO PERSONAGEM" />
+      <input type="text" placeholder={title} />
     </Container>
   )
 }

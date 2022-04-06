@@ -17,6 +17,7 @@ export const Container = styled.div`
     background: transparent;
     border: 0;
     color: #f4ede8;
+    outline: none;
 
     &::placeholder {
       color: #f4ede8;
