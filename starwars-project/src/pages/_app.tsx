@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <CharactersMoviesProvider>
       <GlobalStyle />
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </CharactersMoviesProvider>
   )
 }

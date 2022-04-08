@@ -18,5 +18,11 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     gap: 16px;
+
+    div.spinner {
+      position: absolute;
+      top: 60%;
+      left: 43%;
+    }
   }
 `

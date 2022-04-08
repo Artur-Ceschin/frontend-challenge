@@ -10,6 +10,8 @@ import {
 interface IUseCharactersMoviesContext {
   isCharacterOrMovie: string
   setIsCharacterOrMovie: Dispatch<SetStateAction<string>>
+  query: string
+  setQuery: Dispatch<SetStateAction<string>>
 }
 
 interface IUseCharactersMoviesProviderProps {
@@ -24,9 +26,16 @@ export function CharactersMoviesProvider({
 }: IUseCharactersMoviesProviderProps) {
   const [isCharacterOrMovie, setIsCharacterOrMovie] = useState("characters")
 
+  const [query, setQuery] = useState("")
+
   return (
     <CharactersMoviesContext.Provider
-      value={{ isCharacterOrMovie, setIsCharacterOrMovie }}
+      value={{
+        isCharacterOrMovie,
+        setIsCharacterOrMovie,
+        query,
+        setQuery,
+      }}
     >
       {children}
     </CharactersMoviesContext.Provider>

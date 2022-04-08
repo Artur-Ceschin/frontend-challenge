@@ -37,10 +37,8 @@ export const Card = styled.div`
 
   button {
     position: absolute;
-    width: 90%;
+    width: 85%;
     bottom: 12%;
-    /* margin-top: 20px; */
-    text-align: center;
     background: none;
     color: var(--yellow-300);
     font-weight: bold;

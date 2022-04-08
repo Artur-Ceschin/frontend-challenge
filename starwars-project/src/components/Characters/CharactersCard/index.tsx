@@ -2,6 +2,7 @@ import axios from "axios"
 import { SemipolarSpinner } from "react-epic-spinners"
 import { useCallback, useEffect, useState } from "react"
 import { Card } from "./styles"
+import Link from "next/link"
 
 interface ICharactersCardProps {
   name: string
@@ -16,6 +17,7 @@ export function CharactersCard({ character }) {
   const [specie, setSpecie] = useState("")
   const [homeWorld, setHomeWorld] = useState("")
   const [vehicle, setVehicle] = useState("")
+  const [characterId, setCharacterId] = useState()
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -30,6 +32,7 @@ export function CharactersCard({ character }) {
         const homeWorld = await axios.get(homeUrl)
         setHomeWorld(homeWorld.data.name)
       }
+
       const specieUrl = character.species[0]
       if (specieUrl) {
         const specie = await axios.get(specieUrl)
@@ -41,6 +44,9 @@ export function CharactersCard({ character }) {
           setVehicle(vechile.data.name)
         }
       })
+      if (character.url) {
+        setCharacterId(character.url.split("/")[5])
+      }
     } catch (err) {
       setLoading(false)
       console.log(err)
@@ -48,6 +54,7 @@ export function CharactersCard({ character }) {
       setLoading(false)
     }
   }, [])
+
   return (
     <Card>
       {loading ? (
@@ -78,7 +85,9 @@ export function CharactersCard({ character }) {
             </div>
           </div>
 
-          <button>VER DETALHES</button>
+          <button>
+            <Link href={`character/${characterId}`}>VER DETALHES</Link>
+          </button>
         </>
       )}
     </Card>

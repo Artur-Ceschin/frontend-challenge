@@ -28,9 +28,12 @@ export const Card = styled.div`
       font-weight: bold;
     }
   }
+  position: relative;
 
   button {
-    width: 100%;
+    position: absolute;
+    width: 85%;
+    bottom: 12%;
     margin-top: 20px;
     text-align: center;
     background: none;
