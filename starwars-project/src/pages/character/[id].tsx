@@ -99,7 +99,7 @@ export default function Character({
             </PhysicalInformation>
           </div>
           <GraphicSection>
-            <h2>APRIÇÕES EM FILMES</h2>
+            <h2>APARIÇÕES EM FILMES</h2>
             <section>
               <Pie data={data} />
               <p>
