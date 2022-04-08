@@ -68,6 +68,11 @@ $ cd starwars-project
 $ yarn 
 $ yarn dev
 ```
+&nbsp;
+
+### 🔗 Link para o projeto online
+
+[STARWARS-CASTING](https://starwars-nine.vercel.app/)
 
 É isso, bora pra ação!
 Caso você tenha alguma dúvida, alguma sugestão ou alguma dificuldade você pode falar direto com a galera de tech recruiter que a gente ta pronto pra te ajudar!
