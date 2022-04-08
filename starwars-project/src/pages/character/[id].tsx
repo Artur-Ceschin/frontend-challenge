@@ -18,9 +18,9 @@ export default function Character({
   people,
   vehicles,
   starships,
+  species,
   films,
   totalFilms,
-  specie,
 }) {
   const { isCharacterOrMovie } = useCharactersMovies()
   const router = useRouter()
@@ -61,6 +61,8 @@ export default function Character({
     },
   }
 
+  console.log("species", species)
+
   return (
     <>
       <Header />
@@ -71,7 +73,7 @@ export default function Character({
             <PhysicalInformation>
               <h2>INFORMAÇÕES FÍSICAS</h2>
               <div>
-                <p>ESPÉCIE:{specie?.name.toUpperCase() || "HUMANA"} </p>
+                <p>ESPÉCIE:{species[0]?.name?.toUpperCase() || "HUMANA"} </p>
                 <p>ALTURA: {people?.heigth} METRO</p>
                 <p>PESO: {people?.mass} KG</p>
                 <p>
@@ -145,7 +147,12 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     })
   )
 
-  const { data: specie } = await axios.get(people?.species[0])
+  const species = await Promise.all(
+    people.species.map(async (species: string) => {
+      const { data } = await axios.get(species)
+      return data
+    })
+  )
 
   const films = await Promise.all(
     people.films.map(async (film: string) => {
@@ -161,9 +168,9 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
       people,
       vehicles,
       starships,
+      species,
       films,
       totalFilms,
-      specie,
     },
     revalidate: 60 * 60 * 24, //24 hours
   }
