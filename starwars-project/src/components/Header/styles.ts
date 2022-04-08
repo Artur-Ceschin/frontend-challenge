@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components"
 import { shade } from "polished"
+import styled, { css } from "styled-components"
 
 interface CharactersOrMovies {
   isCharacterOrMovie: String
@@ -82,5 +82,6 @@ export const Register = styled.div`
     border: 1px solid var(--yellow-300);
     padding: 10px;
     outline: inherit;
+    cursor: not-allowed;
   }
 `

@@ -155,7 +155,6 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   )
 
   const { data: totalFilms } = await api.get("films")
-  console.log("totalFims1", totalFilms.count)
 
   return {
     props: {

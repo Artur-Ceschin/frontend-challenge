@@ -58,6 +58,17 @@ Todas as informações que você vai precisar, estão aqui na [SWAPI](https://sw
 
 ## Talk is cheap, show me the code!
 
+![gif project](./starwars-project/public/starwars-project.gif)
+
+Como executar:
+```bash
+git clone git@github.com:Artur-Ceschin/frontend-challenge.git
+$ cd frontend-challenge
+$ cd starwars-project
+$ yarn 
+$ yarn dev
+```
+
 É isso, bora pra ação!
 Caso você tenha alguma dúvida, alguma sugestão ou alguma dificuldade você pode falar direto com a galera de tech recruiter que a gente ta pronto pra te ajudar!
 <br>

@@ -38,7 +38,9 @@ export function Header() {
       </CharactersOrMovies>
 
       <Register>
-        <button>CADASTRAR-SE</button>
+        <button type="button" disabled>
+          CADASTRAR-SE
+        </button>
       </Register>
     </Container>
   )

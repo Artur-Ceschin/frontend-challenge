@@ -1,10 +1,10 @@
-import { MoviesCard } from "./MoviesCard"
-import { Search } from "../Search"
-import { Container } from "./styles"
 import { useEffect, useState } from "react"
-import { api } from "../../services/api"
 import { SemipolarSpinner } from "react-epic-spinners"
 import { useCharactersMovies } from "../../hooks/useCharactersMovies"
+import { api } from "../../services/api"
+import { Search } from "../Search"
+import { MoviesCard } from "./MoviesCard"
+import { Container } from "./styles"
 
 export function Movies() {
   const { query } = useCharactersMovies()
@@ -23,10 +23,9 @@ export function Movies() {
 
       if (query) {
         const { data } = await api.get(`films/?search=${query}`)
-        console.log("result", data.results)
+
         setMovies(data.results)
       } else {
-        console.log("data", data)
         setMovies(data.results)
       }
     } catch (err) {

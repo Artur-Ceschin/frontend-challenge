@@ -1,8 +1,8 @@
 import axios from "axios"
-import { SemipolarSpinner } from "react-epic-spinners"
-import { useCallback, useEffect, useState } from "react"
-import { Card } from "./styles"
 import Link from "next/link"
+import { useCallback, useEffect, useState } from "react"
+import { SemipolarSpinner } from "react-epic-spinners"
+import { Card } from "./styles"
 
 interface ICharactersCardProps {
   name: string
