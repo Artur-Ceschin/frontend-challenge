@@ -1,8 +1,14 @@
+import Link from "next/link"
 import { useEffect, useState } from "react"
 import { Card } from "./styles"
 
 export function MoviesCard({ movie }) {
   const [romanEpisode, setRomanEpisode] = useState("")
+  const [movieId, setMovieId] = useState()
+
+  useEffect(() => {
+    setMovieId(movie.url.split("/")[5])
+  }, [movie])
 
   useEffect(() => {
     convertNumberToRoman()
@@ -52,7 +58,10 @@ export function MoviesCard({ movie }) {
         </div>
       </div>
 
-      <button>VER DETALHES</button>
+      <button>
+        <Link href={`movie/${movieId}`}>VER DETALHES</Link>
+        VER DETALHES
+      </button>
     </Card>
   )
 }

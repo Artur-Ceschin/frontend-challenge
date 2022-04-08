@@ -1,9 +1,6 @@
-import { useState } from "react"
-import Image from "next/image"
 import Link from "next/link"
-
-import { CharactersOrMovies, Container, Register, StarWars } from "./styles"
 import { useCharactersMovies } from "../../hooks/useCharactersMovies"
+import { CharactersOrMovies, Container, Register, StarWars } from "./styles"
 
 export function Header() {
   // const [isCharacterOrMovie, setIsCharacterOrMovie] = useState("characters")
@@ -26,13 +23,17 @@ export function Header() {
           onClick={() => setIsCharacterOrMovie("characters")}
           className="characters"
         >
-          PERSONAGENS
+          <Link href="/">
+            <a>PERSONAGENS</a>
+          </Link>
         </button>
         <button
           onClick={() => setIsCharacterOrMovie("movies")}
           className="movies"
         >
-          FILMES
+          <Link href="/">
+            <a>FILMES</a>
+          </Link>
         </button>
       </CharactersOrMovies>
 

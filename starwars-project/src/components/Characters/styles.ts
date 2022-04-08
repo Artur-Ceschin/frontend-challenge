@@ -1,3 +1,4 @@
+import { shade } from "polished"
 import styled from "styled-components"
 
 export const Container = styled.div`
@@ -19,4 +20,25 @@ export const Container = styled.div`
     justify-content: center;
     gap: 16px;
   }
+`
+
+export const LoadMoreButton = styled.div`
+  width: 30%;
+  button {
+    width: 100%;
+    background: none;
+    color: var(--yellow-300);
+    font-weight: bold;
+    border: 2px solid var(--yellow-300);
+    padding: 12px;
+    outline: inherit;
+  }
+
+  transition: background 0.2s;
+
+  &:hover {
+    background: ${shade(0.9, "#FFE81F")};
+  }
+
+  margin: 24px auto;
 `
